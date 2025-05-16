@@ -76,13 +76,38 @@
 
   <img src="https://i.ibb.co/FqmM2HNs/image.jpg" alt="Happy Girl">
 
-  <div style="margin-top: 30px;">
-  <iframe width="300" height="170"
-    src="https://www.youtube.com/embed/1WDJ_tS4aGg?autoplay=1&loop=1&playlist=1WDJ_tS4aGg"
-    title="JONY – Комета" 
-    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-  </iframe>
-</div>
+  <audio id="bgMusic" autoplay loop>
+  <source src="https://dl.sndup.net/k46s/JONY-Kometa.mp3" type="audio/mp3">
+  Ваш браузер не поддерживает аудио.
+</audio>
+
+<button onclick="toggleMusic()" style="
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 999;
+">Пауза</button>
+
+<script>
+  const music = document.getElementById('bgMusic');
+  const button = document.querySelector('button');
+  function toggleMusic() {
+    if (music.paused) {
+      music.play();
+      button.textContent = 'Пауза';
+    } else {
+      music.pause();
+      button.textContent = 'Играть';
+    }
+  }
+</script>
 
   <script>
     // Простые звёзды + фейерверк
